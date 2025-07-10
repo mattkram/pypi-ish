@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "pypi-ish"
+version = "0.4.0"
+description = "A simple web application that mimics the behavior of PyPI."
+authors = ["Matt Kramer <mkramer@anaconda.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+flask = "^1.1.1"
+flask-migrate = "^2.5.2"
+flask-sqlalchemy = "^2.4.1"
+wfastcgi = "^3.0.0"
+pytest-cov = "^2.10.0"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+pytest = "^5.3.3"
+python-dotenv = "^0.10.3"
+mypy = "^0.782"
+flake8 = "^3.8.3"
+pydocstyle = "^5.0.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

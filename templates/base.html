@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        {% block page_title %}{% endblock %}
+    </title>
+</head>
+<body>
+<a href="{{ url_for('simple.main_index') }}">Index</a>
+<a href="{{ url_for('simple.upload_file') }}">Upload</a>
+
+{% block content %}{% endblock %}
+</body>
+</html>

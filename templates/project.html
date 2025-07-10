@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page_title %}Links for {{ project.name }}{% endblock %}
+
+{% block content %}
+<h1>Links for {{ project.name }}</h1>
+{% for release in project.releases %}
+{% for release_file in release.release_files %}
+<a href="{{ url_for('simple.download_release', project_name=project.name, filename=release_file.filename, _anchor=create_hash(release_file)) | replace('%3D', '=') | replace('/#', '#') }}">
+    {{ release_file.filename }}
+</a>
+<br>
+{% endfor %}
+{% endfor %}
+{% endblock %}

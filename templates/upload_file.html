@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+Upload new File
+{% endblock %}
+
+{% block content %}
+<h1>Upload Package(s)</h1>
+
+<form method=post enctype=multipart/form-data>
+    <input type="file" name="files" multiple>
+    <input type="submit" value="Upload">
+</form>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul class=flashes>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+{% endblock %}
